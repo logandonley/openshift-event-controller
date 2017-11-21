@@ -49,6 +49,8 @@ objects:
         uri: ${SOURCE_CODE_URL}
         ref: ${SOURCE_CODE_REF}
       contextDir: ${SOURCE_CODE_CONTEXT_DIR}
+      sourceSecret:
+        name: ${SOURCE_SECRET}
     strategy:
       dockerStrategy:
         from:
@@ -164,7 +166,7 @@ parameters:
 - description: Source code repo URL
   name: SOURCE_CODE_URL
   required: true
-  value: https://github.com/logandonley/openshift-event-controller.git
+  value: https://github.com/redhat-cop/openshift-event-controller.git
 - description: Source code branch
   name: SOURCE_CODE_REF
   required: true
@@ -172,3 +174,6 @@ parameters:
 - description: Directory in your source code repo
   name: SOURCE_CODE_CONTEXT_DIR
   required: false
+- name: SOURCE_SECRET
+  required: true
+  value: git-secret
